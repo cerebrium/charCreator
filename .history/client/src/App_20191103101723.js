@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Classes from './Classes';
+import OneClass from './OneClass'
 import {
   BrowserRouter as Router,
   Route,
@@ -27,6 +28,7 @@ class App extends React.Component {
           <>
             <nav><Link to='/classes'>Home</Link></nav>
             <Route exact path='/classes' render={ () => <Classes charClasses={this.state.charClasses}/> } />
+            <Route exact path='/classes:id' render={ () => <Classes charClasses={this.state.charClasses}/> } />
           </>
         </Router>
     );  

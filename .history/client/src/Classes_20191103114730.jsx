@@ -16,7 +16,7 @@ class Classes extends React.Component{
     
     handleOnClick = (event) => {
         this.setState({
-            selectedClass : event.target.id
+            selectedClass : 
         })
         if (this.state.selectedClass) {
             fetch(`/classes/${this.state.selectedClass}`).then(response => response.json())
@@ -41,7 +41,7 @@ class Classes extends React.Component{
                     </div>
                     <br />
                     <Link to={`/classes/${this.state.selectedClass}`}>Get Details About Selected Class</Link>
-                    <Route path={`/classes/${this.state.selectedClass}`} render={ () => <OneClass classdetails={this.state.classdetails}/> } />
+                    <Route path={`/classes/${this.state.selectedClass}`} render={ () => <OneClass classId={this.state.selectedClass}/> } />
                 </>
             </Router>
         )

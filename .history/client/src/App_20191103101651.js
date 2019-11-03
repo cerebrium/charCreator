@@ -27,6 +27,7 @@ class App extends React.Component {
           <>
             <nav><Link to='/classes'>Home</Link></nav>
             <Route exact path='/classes' render={ () => <Classes charClasses={this.state.charClasses}/> } />
+            <Route exact path='/classes:id' render={ () => <Classes charClasses={this.state.charClasses}/> } />
           </>
         </Router>
     );  

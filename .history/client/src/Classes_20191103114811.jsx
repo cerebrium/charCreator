@@ -41,7 +41,7 @@ class Classes extends React.Component{
                     </div>
                     <br />
                     <Link to={`/classes/${this.state.selectedClass}`}>Get Details About Selected Class</Link>
-                    <Route path={`/classes/${this.state.selectedClass}`} render={ () => <OneClass classdetails={this.state.classdetails}/> } />
+                    <Route path={`/classes/${this.state.selectedClass}`} render={ () => <OneClass classdetails={this.state.selectedClass}/> } />
                 </>
             </Router>
         )

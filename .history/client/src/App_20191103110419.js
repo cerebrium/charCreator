@@ -27,6 +27,7 @@ class App extends React.Component {
           <>
             <nav><Link to='/classes'>Home</Link></nav>
             <Route exact path='/classes' render={ () => <Classes charClasses={this.state.charClasses}/> } />
+            <Route path={`/classes/${ele._id}`} Render={ () => <OneClass />} />
           </>
         </Router>
     );  

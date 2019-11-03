@@ -19,6 +19,14 @@ db.on('error', (err) => {
     console.log(`databas error:\n${err}`)
 })
 
+// Routes
+// app.get('/', (req, res) => {
+//     CharClass.find({}, (err, classes) => {
+//         console.log(classes)
+//     })
+//     res.send(classes)
+// })
+
 app.use('/classes', require('./routes/charClasses'))
 app.use('/skills', require('./routes/skills'))
 

@@ -35,7 +35,7 @@ Router.post('/', (req, res) => {
 
 // add'
 Router.post('/:id/skills', (req, res) => {
-    CharClass.findById(req.params._id, (err, classe) => {
+    CharClass.findById(req.params.id, (err, classe) => {
         console.log(req.body)
         // need to figure out how to access the correct thing to push
         Skill.findById(req.body._id, (err, skill) => {

@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Classes from './Classes';
+import OneClass from './OneClass';
 import {
   BrowserRouter as Router,
   Route,
