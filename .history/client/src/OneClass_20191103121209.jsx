@@ -11,12 +11,11 @@ class OneClass extends React.Component {
                     <li>skills: {this.mappedskills}</li>
                     <li>faction: {this.props.classdetails.faction}</li>
                 </ul>
-                <h2>Add skills</h2>
-                <form action={`/classes/${this.props.classdetails._id}/skills`} method='POST'>
-                    <input type="text" name='name' placeholder='name of skill'/>
-                    <input type="text" name='damage' placeholder='damage'/>
-                    <input type="text" name='healing' placeholder='healing'/>
-                    <input type="text" name='type' placeholder='type'/>
+                <h2>Update skills</h2>
+                <form action={`/classes`} method='POST'>
+                    <input type="text" name='name' placeholder='name of char'/>
+                    <input type="text" name='faction' placeholder='faction'/>
+                    <input type="text" name='class' placeholder='class'/>
 
                     <input type='submit' value='Submit'/>
                 </form>

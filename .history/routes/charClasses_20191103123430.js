@@ -35,9 +35,9 @@ Router.post('/', (req, res) => {
 
 // add'
 Router.post('/:id/skills', (req, res) => {
-    CharClass.findById(req.params.id, (err, classe) => {
+    CharClass.findById(req.params._id, (err, classe) => {
         console.log(req.params.id)
-        console.log(req.body)
+        console.log(req.body._id)
         // need to figure out how to access the correct thing to push
             classe.skills.push(req.body);
             classe.save((err) => {
@@ -45,6 +45,7 @@ Router.post('/:id/skills', (req, res) => {
             })
         })
     })
+})
 
 
 module.exports = Router;
