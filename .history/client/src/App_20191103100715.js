@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import Classes from './Classes';
 import {
   BrowserRouter as Router,
   Route,
@@ -24,11 +23,11 @@ class App extends React.Component {
 
 
   render () {
+    const mappedClasses = this.state.charClasses.map((ele, id) => <p key={id}>{ele.name}</p>)
       return(
         <Router>
           <>
             <nav><Link to='/classes'>Home</Link></nav>
-            <Route exact path='/classes' render={ () => <Classes charClasses={this.state.charClasses}/> } />
           </>
         </Router>
     );  
