@@ -2,43 +2,29 @@ import React from 'react';
 
 class OneClass extends React.Component {
     state = {
-        classSkills : null,
-        mappedskills : [],
-        displayArray : ['waiting for data']
+        classSkills : null
     }
 
     componentDidMount = () => {
         fetch(`/classes/${this.props.classdetails._id}`).then(response => response.json())
             .then(json => {
                 this.setState({
-                    classSkills : json.skills
+                    classSkills : json
                 })
             })
         }
 
-        handleClick = (event) => {
-            const mappedeles = this.state.classSkills.map((ele, id) => <p>{ele.name} {ele.damage} {ele.healing} {ele.type}</p>)
-            console.log(mappedeles)
-            this.setState({
-                displayArray : mappedeles
-            })
-        }
+    render () {
 
-        render () {
-            // if (this.state.classSkills) {
-            //     const mappedeles = this.state.classSkills.map((ele, id) => <p>{ele.name} {ele.damage} {ele.healing} {ele.type}</p>)
-            //     console.log(mappedeles)
-            // }
-            // this.setState({
-            //     displayArray : mappedeles
-            // })
+        // const mappedskills = this.state.classSkills.skills.((ele, id) => <ul key={id}><li>{ele}</li></ul>)
+        // console.log(`mappedskills: ${mappedskills}`)
+        console.log(this.state.classSkills.)
         return (
             <>      
                 <h1>More Details about class:</h1>
                 <ul>
                     <li>class: {this.props.classdetails.name}</li>
-                    <button onClick={this.handleClick}>Click for Skills</button>
-                        {this.state.displayArray}
+                    {/* <li>skills: {this.state.classSkills}</li> */}
                     <li>faction: {this.props.classdetails.faction}</li>
                 </ul>
                 <h2>Add skills</h2>

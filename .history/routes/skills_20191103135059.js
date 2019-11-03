@@ -4,7 +4,7 @@ const Skill = require('../models/skill');
 
 // get all
 router.get('/:id', (req, res) => {
-    Skill.findById(req.params.id, (err, skills) => {
+    Skill.findById({req.params.id}, (err, skills) => {
         res.json(skills)
     })
 })

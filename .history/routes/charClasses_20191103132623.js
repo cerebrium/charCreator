@@ -1,8 +1,7 @@
 const express = require('express');
 const Router = express.Router();
 const CharClass = require('../models/charClass');
-const Skill = require('../models/skill');
-const mongoose = require('mongoose');
+const Skill = require('../models/skill')
 
 // get all classes
 Router.get('/', (req, res) => {
@@ -36,18 +35,18 @@ Router.post('/', (req, res) => {
 
 // add'
 Router.post('/:id/skills', (req, res) => {
-    CharClass.findById(req.params.id, (err, classe) => {
-        console.log(`is id right type: ${mongoose.Types.ObjectId.isValid(req.params.id)}`)
-        console.log(req.body)
+    CharClass.findById(req.params._id, (err, classe) => {
+        console.log(req.params.id)
+        console.log(req.body._id)
         let newSkill = Skill(req.body)
-            newSkill.save((err) => {
-                classe.skills.push(newSkill);
-                classe.save((err) => {
-                    res.redirect('/classes')
-                })
+        // need to figure out how to access the correct thing to push
+            classe.skills.push(newSkill);
+            classe.save((err) => {
+                res.redirect('/classes')
             })
         })
     })
+})
 
 
 module.exports = Router;

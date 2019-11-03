@@ -10,7 +10,7 @@ class Classes extends React.Component{
     
     state = {
         selectedClass : 0,
-        classdetails : null
+        classdetails : []
     }
 
     
@@ -32,7 +32,6 @@ class Classes extends React.Component{
     
     render() {
         const mappedClasses = this.props.charClasses.map((ele, id) => <button type='text' key={id} id={ele._id} classdeets={ele} onClick={this.handleOnClick}>Select Class {ele.name}</button>)
-        console.log(mappedClasses)
         return (
             <Router>
                 <>

@@ -38,7 +38,7 @@ class OneClass extends React.Component {
                 <ul>
                     <li>class: {this.props.classdetails.name}</li>
                     <button onClick={this.handleClick}>Click for Skills</button>
-                        {this.state.displayArray}
+
                     <li>faction: {this.props.classdetails.faction}</li>
                 </ul>
                 <h2>Add skills</h2>

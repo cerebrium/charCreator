@@ -2,9 +2,8 @@ import React from 'react';
 
 class OneClass extends React.Component {
     state = {
-        classSkills : null,
-        mappedskills : [],
-        displayArray : ['waiting for data']
+        classSkills : [],
+        mappedskills : []
     }
 
     componentDidMount = () => {
@@ -16,29 +15,20 @@ class OneClass extends React.Component {
             })
         }
 
-        handleClick = (event) => {
-            const mappedeles = this.state.classSkills.map((ele, id) => <p>{ele.name} {ele.damage} {ele.healing} {ele.type}</p>)
-            console.log(mappedeles)
-            this.setState({
-                displayArray : mappedeles
-            })
-        }
-
         render () {
-            // if (this.state.classSkills) {
-            //     const mappedeles = this.state.classSkills.map((ele, id) => <p>{ele.name} {ele.damage} {ele.healing} {ele.type}</p>)
-            //     console.log(mappedeles)
-            // }
-            // this.setState({
-            //     displayArray : mappedeles
-            // })
+            let mappedskills = []
+            for (let ele in this.state.classSkills) {
+                mappedskills.push(<p>{this.state.classSkills[ele]}</p>)
+            }
+        // console.log(`mappedskills: ${mappedskills}`)
+        console.log(this.state.classSkills)
+        console.log(mappedskills)
         return (
             <>      
                 <h1>More Details about class:</h1>
                 <ul>
                     <li>class: {this.props.classdetails.name}</li>
-                    <button onClick={this.handleClick}>Click for Skills</button>
-                        {this.state.displayArray}
+                    {mappedskills}
                     <li>faction: {this.props.classdetails.faction}</li>
                 </ul>
                 <h2>Add skills</h2>

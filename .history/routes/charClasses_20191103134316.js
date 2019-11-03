@@ -40,7 +40,7 @@ Router.post('/:id/skills', (req, res) => {
         console.log(`is id right type: ${mongoose.Types.ObjectId.isValid(req.params.id)}`)
         console.log(req.body)
         let newSkill = Skill(req.body)
-            newSkill.save((err) => {
+            Skill.save((err) => {
                 classe.skills.push(newSkill);
                 classe.save((err) => {
                     res.redirect('/classes')

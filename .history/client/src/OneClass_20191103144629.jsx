@@ -4,7 +4,7 @@ class OneClass extends React.Component {
     state = {
         classSkills : null,
         mappedskills : [],
-        displayArray : ['waiting for data']
+        displayArray : []
     }
 
     componentDidMount = () => {
@@ -19,9 +19,6 @@ class OneClass extends React.Component {
         handleClick = (event) => {
             const mappedeles = this.state.classSkills.map((ele, id) => <p>{ele.name} {ele.damage} {ele.healing} {ele.type}</p>)
             console.log(mappedeles)
-            this.setState({
-                displayArray : mappedeles
-            })
         }
 
         render () {
@@ -38,7 +35,7 @@ class OneClass extends React.Component {
                 <ul>
                     <li>class: {this.props.classdetails.name}</li>
                     <button onClick={this.handleClick}>Click for Skills</button>
-                        {this.state.displayArray}
+
                     <li>faction: {this.props.classdetails.faction}</li>
                 </ul>
                 <h2>Add skills</h2>
