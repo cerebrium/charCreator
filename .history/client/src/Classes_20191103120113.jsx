@@ -40,15 +40,7 @@ class Classes extends React.Component{
                         <div className="App">
                             {mappedClasses}
                         </div>
-                    <br />
-                    <h2>Make a new class</h2> 
-                        <form action="/classes" method='POST'>
-                            <input type="text" name='name' placeholder='name of char'/>
-                            <input type="text" name='faction' placeholder='faction'/>
-                            <input type="text" name='class' placeholder='class'/>
-
-                            <input type='submit' value='Submit'/>
-                        </form>
+                    <br />    
                     <br />
                     <Link to={`/classes/${this.state.selectedClass}`}>Get Details About Selected Class</Link>
                     <Route path={`/classes/${this.state.selectedClass}`} render={ () => <OneClass classdetails={this.state.classdetails}/> } />

@@ -29,7 +29,7 @@ Router.put('/:id', (req, res) => {
 Router.post('/', (req, res) => {
     const newClass = CharClass(req.body);
     newClass.save((err, classe) => {
-        res.redirect('/classes')
+        res.json(classe)
     })
 })
 

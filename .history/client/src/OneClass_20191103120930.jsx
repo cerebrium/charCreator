@@ -8,7 +8,7 @@ class OneClass extends React.Component {
                 <h1>More Details about class:</h1>
                 <ul>
                     <li>class: {this.props.classdetails.name}</li>
-                    <li>skills: {this.mappedskills}</li>
+                    <li>class: {this.mappedskills}</li>
                     <li>faction: {this.props.classdetails.faction}</li>
                 </ul>
             </>

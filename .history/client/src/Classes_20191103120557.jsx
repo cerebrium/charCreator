@@ -45,9 +45,7 @@ class Classes extends React.Component{
                         <form action="/classes" method='POST'>
                             <input type="text" name='name' placeholder='name of char'/>
                             <input type="text" name='faction' placeholder='faction'/>
-                            <input type="text" name='class' placeholder='class'/>
-
-                            <input type='submit' value='Submit'/>
+                            <input type="text" name='class' placeholder='name of char'/>
                         </form>
                     <br />
                     <Link to={`/classes/${this.state.selectedClass}`}>Get Details About Selected Class</Link>
